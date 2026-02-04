@@ -143,6 +143,8 @@ body {
 
 .hero-content {
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 .hero-avatar {
@@ -215,6 +217,7 @@ body {
     gap: 1rem;
     justify-content: center;
     animation: fadeInUp 0.8s ease 0.8s backwards;
+    margin-bottom: 4rem;
 }
 
 .btn {
@@ -318,10 +321,11 @@ body {
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
-    bottom: 2rem;
+    bottom: 1.5rem;
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
+    z-index: 5;
 }
 
 .mouse {
