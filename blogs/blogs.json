@@ -20,5 +20,16 @@
         "readTime": "৬ মিনিট পড়া",
         "slug": "programming-journey-bangla",
         "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=400&fit=crop"
+    },
+    {
+        "id": 3,
+        "title": "Essential Windows Keyboard Shortcuts Every Developer Should Know",
+        "language": "English",
+        "excerpt": "Boost your productivity with these must-know Windows keyboard shortcuts for file management, text editing, and task navigation.",
+        "date": "February 4, 2026",
+        "category": "Productivity",
+        "readTime": "4 min read",
+        "slug": "windows-keyboard-shortcuts",
+        "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&h=400&fit=crop"
     }
 ]
