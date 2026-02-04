@@ -101,14 +101,19 @@ if (typedTextElement) {
 }
 
 // Load Blog Posts
-async function loadBlogPosts() {
+async function loadBlogPosts(filterCategory = 'all') {
     try {
         const response = await fetch('blogs/blogs.json');
         const blogs = await response.json();
         const blogGrid = document.getElementById('blogGrid');
         
         if (blogGrid && blogs.length > 0) {
-            blogGrid.innerHTML = blogs.map(blog => `
+            // Filter blogs if needed
+            const filteredBlogs = filterCategory === 'all' 
+                ? blogs 
+                : blogs.filter(blog => blog.category === filterCategory);
+            
+            blogGrid.innerHTML = filteredBlogs.map(blog => `
                 <a href="blogs/${blog.slug}.html" class="blog-card">
                     <img src="${blog.image}" alt="${blog.title}" class="blog-card-image">
                     <div class="blog-card-content">
@@ -130,6 +135,22 @@ async function loadBlogPosts() {
 
 // Load blogs when page loads
 loadBlogPosts();
+
+// Blog Filter Functionality (for blogs.html page)
+const filterButtons = document.querySelectorAll('.filter-btn');
+if (filterButtons.length > 0) {
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Update active state
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter blogs
+            const category = this.getAttribute('data-category');
+            loadBlogPosts(category);
+        });
+    });
+}
 
 // Navbar background on scroll
 window.addEventListener('scroll', () => {
