@@ -100,6 +100,37 @@ if (typedTextElement) {
     setTimeout(typeText, 1000);
 }
 
+// Load Blog Posts
+async function loadBlogPosts() {
+    try {
+        const response = await fetch('blogs/blogs.json');
+        const blogs = await response.json();
+        const blogGrid = document.getElementById('blogGrid');
+        
+        if (blogGrid && blogs.length > 0) {
+            blogGrid.innerHTML = blogs.map(blog => `
+                <a href="blogs/${blog.slug}.html" class="blog-card">
+                    <img src="${blog.image}" alt="${blog.title}" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">${blog.category}</span>
+                        <h3 class="blog-card-title">${blog.title}</h3>
+                        <p class="blog-card-excerpt">${blog.excerpt}</p>
+                        <div class="blog-card-meta">
+                            <span>${blog.date}</span>
+                            <span class="blog-card-language">${blog.language}</span>
+                        </div>
+                    </div>
+                </a>
+            `).join('');
+        }
+    } catch (error) {
+        console.error('Error loading blog posts:', error);
+    }
+}
+
+// Load blogs when page loads
+loadBlogPosts();
+
 // Navbar background on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
