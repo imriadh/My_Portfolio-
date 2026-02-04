@@ -42,5 +42,16 @@
         "readTime": "6 min read",
         "slug": "command-line-shortcuts",
         "image": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&h=400&fit=crop"
+    },
+    {
+        "id": 5,
+        "title": "Ultimate ChatGPT Prompts for CS Students: From Coding to Career Success",
+        "language": "English",
+        "excerpt": "Powerful ChatGPT prompts for learning DSA, debugging code, preparing for interviews, and accelerating your CS journey.",
+        "date": "February 4, 2026",
+        "category": "Tutorial",
+        "readTime": "10 min read",
+        "slug": "chatgpt-prompts-for-cs-students",
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop"
     }
 ]
