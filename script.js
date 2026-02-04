@@ -101,10 +101,11 @@ const observer = new IntersectionObserver((entries) => {
             if (entry.target.classList.contains('skill-card')) {
                 const progressBar = entry.target.querySelector('.skill-progress');
                 if (progressBar) {
-                    const width = progressBar.style.width;
+                    const targetWidth = progressBar.getAttribute('data-width') || getComputedStyle(progressBar).width;
+                    progressBar.setAttribute('data-width', targetWidth);
                     progressBar.style.width = '0';
                     setTimeout(() => {
-                        progressBar.style.width = width;
+                        progressBar.style.width = targetWidth;
                     }, 200);
                 }
             }
@@ -160,8 +161,8 @@ contactForm.addEventListener('submit', (e) => {
         message: document.getElementById('message').value
     };
     
-    // Show success message
-    showNotification('Message sent successfully! I will get back to you soon.', 'success');
+    // Show success message (Note: This is a demo. In production, integrate with a backend API or email service)
+    showNotification('Thank you for your message! (Demo mode - form not actually submitted)', 'success');
     
     // Reset form
     contactForm.reset();
@@ -242,8 +243,15 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Add cursor effect (optional enhancement)
+// Add cursor effect (optional enhancement) - Throttled for performance
+let lastCursorTime = 0;
+const cursorThrottle = 50; // ms
+
 document.addEventListener('mousemove', (e) => {
+    const now = Date.now();
+    if (now - lastCursorTime < cursorThrottle) return;
+    lastCursorTime = now;
+    
     const cursor = document.createElement('div');
     cursor.className = 'cursor-trail';
     cursor.style.cssText = `
@@ -279,14 +287,7 @@ cursorStyle.textContent = `
 `;
 document.head.appendChild(cursorStyle);
 
-// Add loading animation
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    }, 100);
-});
+// Page is ready - all animations are handled by CSS and intersection observers
 
 // Performance optimization: Lazy load images
 if ('IntersectionObserver' in window) {
