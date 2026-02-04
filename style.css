@@ -624,10 +624,13 @@ section {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
+    color: white;
 }
 
 .blog-hero-title .gradient-text {
     color: white;
+    background: none;
+    -webkit-text-fill-color: white;
 }
 
 .blog-hero-description {
