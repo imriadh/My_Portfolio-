@@ -1,31 +1,58 @@
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+
 // Mobile Navigation Toggle
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    navToggle.classList.toggle('active');
-});
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+}
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
+        if (navMenu) {
+            navMenu.classList.remove('active');
+        }
+        if (navToggle) {
+            navToggle.classList.remove('active');
+        }
     });
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for all anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        
+        // Skip if it's just '#' or empty
+        if (!href || href === '#') return;
+        
+        const target = document.querySelector(href);
         if (target) {
-            const offsetTop = target.offsetTop - 70;
+            e.preventDefault();
+            
+            const navbar = document.querySelector('.navbar');
+            const navbarHeight = navbar ? navbar.offsetHeight : 70;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = targetPosition - navbarHeight - 20;
+            
             window.scrollTo({
-                top: offsetTop,
+                top: offsetPosition,
                 behavior: 'smooth'
             });
+            
+            // Close mobile menu if open
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
+            if (navToggle && navToggle.classList.contains('active')) {
+                navToggle.classList.remove('active');
+            }
         }
     });
 });
@@ -148,24 +175,43 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Contact Form Handling
+// Contact Form Handling with Web3Forms
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
-    };
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
     
-    // Show success message (Note: This is a demo. In production, integrate with a backend API or email service)
-    showNotification('Thank you for your message! (Demo mode - form not actually submitted)', 'success');
+    // Disable button and show loading state
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
     
-    // Reset form
-    contactForm.reset();
+    const formData = new FormData(contactForm);
+    
+    try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            showNotification('Thank you! Your message has been sent successfully. I\'ll get back to you soon!', 'success');
+            contactForm.reset();
+        } else {
+            throw new Error('Form submission failed');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        showNotification('Oops! Something went wrong. Please try again or email me directly.', 'error');
+    } finally {
+        // Re-enable button
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+    }
 });
 
 // Notification function
@@ -309,14 +355,7 @@ if ('IntersectionObserver' in window) {
     });
 }
 
-// Add keyboard navigation support
-document.addEventListener('keydown', (e) => {
-    // Press 'Escape' to close mobile menu
-    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-    }
-});
+}); // End of DOMContentLoaded
 
 // Console welcome message
 console.log('%c👋 Welcome to Riad\'s Portfolio!', 'color: #667eea; font-size: 20px; font-weight: bold;');

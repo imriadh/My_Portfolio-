@@ -143,6 +143,25 @@ body {
 
 .hero-content {
     text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--shadow-xl);
+    animation: fadeInDown 0.8s ease, float 3s ease-in-out infinite;
+}
+
+.hero-profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero-subtitle {
@@ -198,6 +217,7 @@ body {
     gap: 1rem;
     justify-content: center;
     animation: fadeInUp 0.8s ease 0.8s backwards;
+    margin-bottom: 4rem;
 }
 
 .btn {
@@ -301,10 +321,11 @@ body {
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
-    bottom: 2rem;
+    bottom: 1.5rem;
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
+    z-index: 5;
 }
 
 .mouse {
@@ -391,6 +412,18 @@ section {
 .image-placeholder svg {
     width: 100%;
     height: 100%;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
 }
 
 .about-text h3 {
@@ -754,6 +787,15 @@ section {
     }
 }
 
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
@@ -786,6 +828,11 @@ section {
 
     .nav-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(8px, -8px);
+    }
+
+    .hero-avatar {
+        width: 120px;
+        height: 120px;
     }
 
     .hero-title {
