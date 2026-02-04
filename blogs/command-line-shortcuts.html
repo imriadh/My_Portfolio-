@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master the Command Line: Essential Commands Every Developer Must Know">
+    <title>Command Line Shortcuts | Riad's Blog</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .blog-post {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .blog-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+        }
+        .blog-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin-bottom: 3rem;
+        }
+        .blog-content {
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        .blog-content h2 {
+            font-size: 1.75rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .blog-content h3 {
+            font-size: 1.35rem;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+        .command-table {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-collapse: collapse;
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        .command-table th,
+        .command-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .command-table th {
+            background: var(--gradient-1);
+            color: white;
+            font-weight: 600;
+        }
+        .command-table tr:last-child td {
+            border-bottom: none;
+        }
+        .command-code {
+            background: #1e1e1e;
+            color: #4ec9b0;
+            padding: 0.35rem 0.65rem;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        .code-block code {
+            color: #4ec9b0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 3rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .tip-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            margin: 2rem 0;
+        }
+        .tip-box strong {
+            color: var(--primary-color);
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #f5576c15 0%, #f093fb15 100%);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid #f5576c;
+            margin: 2rem 0;
+        }
+        .warning-box strong {
+            color: #f5576c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html" style="text-decoration: none; color: inherit;">
+                    <span class="logo-text">Riad<span class="logo-dot">.</span></span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="../index.html#home" class="nav-link">Home</a>
+                <a href="../index.html#blog" class="nav-link">Blog</a>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <article class="blog-post">
+        <header class="blog-header">
+            <h1 class="blog-title">Master the Command Line: Essential Commands Every Developer Must Know</h1>
+            <div class="blog-meta">
+                <span>📅 February 4, 2026</span>
+                <span>⏱️ 6 min read</span>
+                <span>🏷️ Productivity</span>
+            </div>
+        </header>
+
+        <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&h=400&fit=crop" 
+             alt="Command line terminal" class="blog-image">
+
+        <div class="blog-content">
+            <p>The command line might seem intimidating at first, but it's one of the most powerful tools in a developer's arsenal. Whether you're working with Git, deploying applications, or navigating your file system, knowing these essential commands will dramatically speed up your workflow.</p>
+
+            <div class="tip-box">
+                <strong>💡 Why Learn Command Line?</strong> While GUIs are convenient, the command line is faster, more powerful, and often required for remote server management, version control, and automation tasks.
+            </div>
+
+            <h2>🗺️ Navigation & File System Commands</h2>
+            <p>Master these basics to navigate your computer like a pro:</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="command-code">cd</code></td>
+                        <td>Change directory</td>
+                        <td><code class="command-code">cd Documents</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">cd ..</code></td>
+                        <td>Go up one directory</td>
+                        <td><code class="command-code">cd ..</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">cd ~</code></td>
+                        <td>Go to home directory</td>
+                        <td><code class="command-code">cd ~</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">pwd</code></td>
+                        <td>Print working directory (where am I?)</td>
+                        <td><code class="command-code">pwd</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">ls</code></td>
+                        <td>List files and folders (Linux/Mac)</td>
+                        <td><code class="command-code">ls -la</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">dir</code></td>
+                        <td>List files and folders (Windows)</td>
+                        <td><code class="command-code">dir</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">mkdir</code></td>
+                        <td>Create new directory</td>
+                        <td><code class="command-code">mkdir my-project</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">touch</code></td>
+                        <td>Create new file (Linux/Mac)</td>
+                        <td><code class="command-code">touch index.html</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">echo > file</code></td>
+                        <td>Create new file (Windows)</td>
+                        <td><code class="command-code">echo. > index.html</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>📝 File Operations</h2>
+            <p>Essential commands for managing files:</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="command-code">cp</code></td>
+                        <td>Copy files/folders (Linux/Mac)</td>
+                        <td><code class="command-code">cp file.txt backup.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">copy</code></td>
+                        <td>Copy files (Windows)</td>
+                        <td><code class="command-code">copy file.txt backup.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">mv</code></td>
+                        <td>Move or rename files (Linux/Mac)</td>
+                        <td><code class="command-code">mv old.txt new.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">move</code></td>
+                        <td>Move files (Windows)</td>
+                        <td><code class="command-code">move old.txt new.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">rm</code></td>
+                        <td>Remove/delete files (Linux/Mac)</td>
+                        <td><code class="command-code">rm file.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">del</code></td>
+                        <td>Delete files (Windows)</td>
+                        <td><code class="command-code">del file.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">rm -rf</code></td>
+                        <td>Remove directory and contents (Linux/Mac)</td>
+                        <td><code class="command-code">rm -rf folder/</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">cat</code></td>
+                        <td>Display file contents (Linux/Mac)</td>
+                        <td><code class="command-code">cat readme.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">type</code></td>
+                        <td>Display file contents (Windows)</td>
+                        <td><code class="command-code">type readme.txt</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="warning-box">
+                <strong>⚠️ Warning:</strong> <code class="command-code">rm -rf</code> is extremely powerful and dangerous! It permanently deletes files without confirmation. Always double-check before using it.
+            </div>
+
+            <h2>🌿 Git Commands (Essential for Every Developer)</h2>
+            <p>Version control commands you'll use daily:</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="command-code">git init</code></td>
+                        <td>Initialize a new Git repository</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">git clone [url]</code></td>
+                        <td>Clone a repository from GitHub</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">git status</code></td>
+                        <td>Check status of your files</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">git add .</code></td>
+                        <td>Stage all changes for commit</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">git add [file]</code></td>
+                        <td>Stage specific file</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">git commit -m "message"</code></td>
+                        <td>Commit staged changes with message</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">git push</code></td>
+                        <td>Push commits to remote repository</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">git pull</code></td>
+                        <td>Pull latest changes from remote</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">git branch</code></td>
+                        <td>List all branches</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">git checkout -b [name]</code></td>
+                        <td>Create and switch to new branch</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">git merge [branch]</code></td>
+                        <td>Merge branch into current branch</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">git log</code></td>
+                        <td>View commit history</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>My Daily Git Workflow:</h3>
+            <div class="code-block">
+<code># Start working on new feature
+git checkout -b new-feature
+
+# Make changes, then check status
+git status
+
+# Stage and commit changes
+git add .
+git commit -m "Add new feature"
+
+# Push to GitHub
+git push origin new-feature</code>
+            </div>
+
+            <h2>🔍 Search & Filter Commands</h2>
+            <p>Find what you're looking for quickly:</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="command-code">grep</code></td>
+                        <td>Search text in files (Linux/Mac)</td>
+                        <td><code class="command-code">grep "error" log.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">find</code></td>
+                        <td>Find files by name (Linux/Mac)</td>
+                        <td><code class="command-code">find . -name "*.js"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">findstr</code></td>
+                        <td>Search text in files (Windows)</td>
+                        <td><code class="command-code">findstr "error" log.txt</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">where</code></td>
+                        <td>Find command location (Windows)</td>
+                        <td><code class="command-code">where python</code></td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">which</code></td>
+                        <td>Find command location (Linux/Mac)</td>
+                        <td><code class="command-code">which python</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>⚡ Terminal Shortcuts & Productivity</h2>
+            <p>Speed up your command line work with these shortcuts:</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Shortcut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="command-code">↑ Arrow</code></td>
+                        <td>Previous command in history</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">↓ Arrow</code></td>
+                        <td>Next command in history</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">Tab</code></td>
+                        <td>Auto-complete file/folder names</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">Ctrl + C</code></td>
+                        <td>Cancel current command</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">Ctrl + L</code></td>
+                        <td>Clear screen (or type <code class="command-code">clear</code>)</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">Ctrl + A</code></td>
+                        <td>Move cursor to start of line</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">Ctrl + E</code></td>
+                        <td>Move cursor to end of line</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">Ctrl + U</code></td>
+                        <td>Delete from cursor to start of line</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">Ctrl + K</code></td>
+                        <td>Delete from cursor to end of line</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">Ctrl + R</code></td>
+                        <td>Search command history</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>🚀 Package Managers & Development</h2>
+            <p>Essential commands for managing dependencies:</p>
+
+            <h3>npm (Node.js):</h3>
+            <div class="code-block">
+<code>npm install              # Install dependencies
+npm install [package]    # Install specific package
+npm start               # Run start script
+npm test                # Run tests
+npm run build           # Build project</code>
+            </div>
+
+            <h3>pip (Python):</h3>
+            <div class="code-block">
+<code>pip install [package]    # Install package
+pip install -r requirements.txt  # Install from file
+pip list                 # List installed packages
+pip freeze > requirements.txt    # Save dependencies</code>
+            </div>
+
+            <h2>💻 System Information</h2>
+            <p>Check your system details:</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="command-code">whoami</code></td>
+                        <td>Display current username</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">hostname</code></td>
+                        <td>Display computer name</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">date</code></td>
+                        <td>Display current date/time</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">top</code> / <code class="command-code">htop</code></td>
+                        <td>View running processes (Linux/Mac)</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">tasklist</code></td>
+                        <td>View running processes (Windows)</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">df -h</code></td>
+                        <td>Check disk space (Linux/Mac)</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">ipconfig</code></td>
+                        <td>Network configuration (Windows)</td>
+                    </tr>
+                    <tr>
+                        <td><code class="command-code">ifconfig</code></td>
+                        <td>Network configuration (Linux/Mac)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>🎓 My Learning Journey</h2>
+            <p>When I first saw the command line during my first year at university, I was terrified. The black screen with blinking cursor felt like hacking in movies. But once I understood its power, there was no going back.</p>
+
+            <h3>Week 1: Basic Navigation</h3>
+            <p>I started with simple commands: <code class="command-code">cd</code>, <code class="command-code">ls</code>, and <code class="command-code">pwd</code>. I practiced navigating my project folders without touching the mouse.</p>
+
+            <h3>Week 2: Git Basics</h3>
+            <p>Learning Git through the command line was a game-changer. <code class="command-code">git add</code>, <code class="command-code">git commit</code>, <code class="command-code">git push</code> – these became second nature.</p>
+
+            <h3>Week 3: File Operations</h3>
+            <p>Creating files, copying, moving – all through commands. I realized how much faster this was than clicking through folders.</p>
+
+            <h3>Month 2+: Advanced Usage</h3>
+            <p>Started using shortcuts like <code class="command-code">Ctrl + R</code> for history search, piping commands together, and writing simple bash scripts.</p>
+
+            <div class="tip-box">
+                <strong>💪 Practice Tip:</strong> Force yourself to use the terminal for file operations instead of File Explorer for one week. It feels slow at first, but you'll be faster than ever by the end!
+            </div>
+
+            <h2>🔥 Real-World Examples</h2>
+
+            <h3>Starting a New Project:</h3>
+            <div class="code-block">
+<code>mkdir my-awesome-project
+cd my-awesome-project
+git init
+npm init -y
+touch index.js
+code .    # Opens VS Code</code>
+            </div>
+
+            <h3>Deploying to GitHub:</h3>
+            <div class="code-block">
+<code>git add .
+git commit -m "Initial commit"
+git remote add origin [your-repo-url]
+git push -u origin main</code>
+            </div>
+
+            <h3>Finding Large Files:</h3>
+            <div class="code-block">
+<code># Linux/Mac
+find . -type f -size +10M
+
+# Windows
+forfiles /S /C "cmd /c if @fsize gtr 10485760 echo @path"</code>
+            </div>
+
+            <h2>🎯 Your 30-Day Command Line Challenge</h2>
+            
+            <p><strong>Week 1:</strong> Use only terminal for navigation (cd, ls, pwd)</p>
+            <p><strong>Week 2:</strong> Add file operations (mkdir, touch, rm, cp)</p>
+            <p><strong>Week 3:</strong> Master Git commands for your projects</p>
+            <p><strong>Week 4:</strong> Learn terminal shortcuts and history search</p>
+
+            <div class="tip-box">
+                <strong>🎁 Bonus Resources:</strong>
+                <ul style="margin-top: 1rem; margin-bottom: 0;">
+                    <li>Try <code class="command-code">tldr [command]</code> for quick help</li>
+                    <li>Use <code class="command-code">man [command]</code> for detailed documentation (Linux/Mac)</li>
+                    <li>Install Git Bash on Windows for Unix-like commands</li>
+                </ul>
+            </div>
+
+            <h2>💡 Final Thoughts</h2>
+            <p>The command line is not just about being "cool" or "hacker-like" – it's about efficiency. Once you're comfortable with these commands, you'll wonder how you ever worked without them.</p>
+
+            <p>Start small, practice consistently, and don't be afraid to make mistakes. The command line is forgiving (except <code class="command-code">rm -rf</code> – always be careful with that one!).</p>
+
+            <p>Remember: Every expert was once a beginner who kept practicing. Your future self will thank you for learning these commands now! 🚀</p>
+
+            <p><strong>What's your go-to terminal command?</strong> Share your favorite productivity tips in the comments!</p>
+        </div>
+
+        <a href="../index.html#blog" class="back-link">← Back to Blog</a>
+    </article>
+
+    <script src="../script.js"></script>
+</body>
+</html>

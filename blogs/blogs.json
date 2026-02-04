@@ -31,5 +31,16 @@
         "readTime": "4 min read",
         "slug": "windows-keyboard-shortcuts",
         "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&h=400&fit=crop"
+    },
+    {
+        "id": 4,
+        "title": "Master the Command Line: Essential Commands Every Developer Must Know",
+        "language": "English",
+        "excerpt": "From basic navigation to Git commands, learn the terminal shortcuts that will make you a more efficient developer.",
+        "date": "February 4, 2026",
+        "category": "Productivity",
+        "readTime": "6 min read",
+        "slug": "command-line-shortcuts",
+        "image": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&h=400&fit=crop"
     }
 ]
