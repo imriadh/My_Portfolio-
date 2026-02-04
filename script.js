@@ -59,46 +59,46 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Typing Effect
 const typedTextElement = document.querySelector('.typed-text');
-const texts = [
-    'CSE Student',
-    'Web Developer',
-    'Problem Solver',
-    'Tech Enthusiast'
-];
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typingSpeed = 150;
+if (typedTextElement) {
+    const texts = [
+        'CSE Student',
+        'Web Developer',
+        'Problem Solver',
+        'Tech Enthusiast'
+    ];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 150;
 
-function typeText() {
-    const currentText = texts[textIndex];
-    
-    if (isDeleting) {
-        typedTextElement.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
-        typingSpeed = 100;
-    } else {
-        typedTextElement.textContent = currentText.substring(0, charIndex + 1);
-        charIndex++;
-        typingSpeed = 150;
+    function typeText() {
+        const currentText = texts[textIndex];
+        
+        if (isDeleting) {
+            typedTextElement.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 100;
+        } else {
+            typedTextElement.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 150;
+        }
+        
+        if (!isDeleting && charIndex === currentText.length) {
+            isDeleting = true;
+            typingSpeed = 2000; // Pause at end
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            typingSpeed = 500; // Pause before next word
+        }
+        
+        setTimeout(typeText, typingSpeed);
     }
-    
-    if (!isDeleting && charIndex === currentText.length) {
-        isDeleting = true;
-        typingSpeed = 2000; // Pause at end
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % texts.length;
-        typingSpeed = 500; // Pause before next word
-    }
-    
-    setTimeout(typeText, typingSpeed);
-}
 
-// Start typing effect when page loads
-document.addEventListener('DOMContentLoaded', () => {
+    // Start typing effect after a short delay
     setTimeout(typeText, 1000);
-});
+}
 
 // Navbar background on scroll
 window.addEventListener('scroll', () => {
