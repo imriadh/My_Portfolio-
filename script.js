@@ -1,39 +1,58 @@
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+
 // Mobile Navigation Toggle
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    navToggle.classList.toggle('active');
-});
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+}
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
+        if (navMenu) {
+            navMenu.classList.remove('active');
+        }
+        if (navToggle) {
+            navToggle.classList.remove('active');
+        }
     });
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for all anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
         const href = this.getAttribute('href');
         
-        // Skip if it's just '#'
-        if (href === '#') return;
+        // Skip if it's just '#' or empty
+        if (!href || href === '#') return;
         
         const target = document.querySelector(href);
         if (target) {
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            e.preventDefault();
+            
+            const navbar = document.querySelector('.navbar');
+            const navbarHeight = navbar ? navbar.offsetHeight : 70;
             const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = targetPosition - navbarHeight - 20; // 20px extra padding
+            const offsetPosition = targetPosition - navbarHeight - 20;
             
             window.scrollTo({
                 top: offsetPosition,
                 behavior: 'smooth'
             });
+            
+            // Close mobile menu if open
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
+            if (navToggle && navToggle.classList.contains('active')) {
+                navToggle.classList.remove('active');
+            }
         }
     });
 });
@@ -336,14 +355,7 @@ if ('IntersectionObserver' in window) {
     });
 }
 
-// Add keyboard navigation support
-document.addEventListener('keydown', (e) => {
-    // Press 'Escape' to close mobile menu
-    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-    }
-});
+}); // End of DOMContentLoaded
 
 // Console welcome message
 console.log('%c👋 Welcome to Riad\'s Portfolio!', 'color: #667eea; font-size: 20px; font-weight: bold;');
