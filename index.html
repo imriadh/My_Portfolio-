@@ -45,7 +45,7 @@
                 </div>
                 <div class="hero-subtitle">Hello, I'm</div>
                 <h1 class="hero-title">
-                    <span class="gradient-text">Riad Hossain</span>
+                    <span class="gradient-text">Riad</span>
                 </h1>
                 <div class="hero-description">
                     <span class="typed-text"></span>
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="about-text">
-                    <h3>Hi, I'm Riad!</h3>
+                    <h3>Hi, I'm Riad Hossain!</h3>
                     <p>I'm a passionate 3rd-year Computer Science & Engineering student from Bangladesh, dedicated to building innovative solutions and expanding my knowledge in the tech world.</p>
                     <p>My journey in computer science has been driven by curiosity and a constant desire to learn. I'm particularly interested in web development, software engineering, and creating impactful digital experiences.</p>
                     <div class="about-stats">
@@ -301,7 +301,16 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms Access Key - Get yours at https://web3forms.com -->
+                        <input type="hidden" name="access_key" value="a2f62524-a7e4-465c-b1ab-26a3946a3f7d">
+                        
+                        <!-- Optional: Redirect after submission -->
+                        <input type="hidden" name="redirect" value="false">
+                        
+                        <!-- Your email where you'll receive messages -->
+                        <input type="hidden" name="from_name" value="Portfolio Contact Form">
+                        
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>

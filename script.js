@@ -156,24 +156,43 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Contact Form Handling
+// Contact Form Handling with Web3Forms
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
-    };
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
     
-    // Show success message (Note: This is a demo. In production, integrate with a backend API or email service)
-    showNotification('Thank you for your message! (Demo mode - form not actually submitted)', 'success');
+    // Disable button and show loading state
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
     
-    // Reset form
-    contactForm.reset();
+    const formData = new FormData(contactForm);
+    
+    try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            showNotification('Thank you! Your message has been sent successfully. I\'ll get back to you soon!', 'success');
+            contactForm.reset();
+        } else {
+            throw new Error('Form submission failed');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        showNotification('Oops! Something went wrong. Please try again or email me directly.', 'error');
+    } finally {
+        // Re-enable button
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+    }
 });
 
 // Notification function
