@@ -11,7 +11,8 @@ if (savedTheme === 'dark') {
     body.classList.add('dark-mode');
 }
 
-// Toggle dark mode on button clickif (themeToggle) {
+// Toggle dark mode on button click
+if (themeToggle) {
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
         
