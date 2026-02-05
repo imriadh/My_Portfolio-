@@ -19,6 +19,23 @@
     --border-radius: 12px;
 }
 
+/* Dark Mode Variables */
+body.dark-mode {
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-light: #94a3b8;
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-dark: #020617;
+    --primary-color: #818cf8;
+    --secondary-color: #a78bfa;
+    --gradient-1: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -37,6 +54,7 @@ body {
     color: var(--text-primary);
     background-color: var(--bg-primary);
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Navigation */
@@ -120,6 +138,59 @@ body {
     background: var(--text-primary);
     transition: var(--transition);
     border-radius: 3px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--primary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle:hover {
+    background: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-color);
+    transition: var(--transition);
+    position: absolute;
+}
+
+.theme-toggle:hover svg {
+    color: white;
+}
+
+.sun-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.moon-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+body.dark-mode .sun-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+body.dark-mode .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg);
 }
 
 /* Hero Section */
