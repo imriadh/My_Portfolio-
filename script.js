@@ -9,6 +9,17 @@ const body = document.body;
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark') {
     body.classList.add('dark-mode');
+    // Set navbar background for dark mode on page load
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+            navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.4)';
+        } else {
+            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+            navbar.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.3)';
+        }
+    }
 }
 
 // Toggle dark mode on button click
@@ -21,6 +32,27 @@ if (themeToggle) {
             localStorage.setItem('theme', 'dark');
         } else {
             localStorage.setItem('theme', 'light');
+        }
+        
+        // Update navbar background immediately
+        const navbar = document.querySelector('.navbar');
+        const isDarkMode = body.classList.contains('dark-mode');
+        if (window.scrollY > 50) {
+            if (isDarkMode) {
+                navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+                navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.4)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            }
+        } else {
+            if (isDarkMode) {
+                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+                navbar.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.3)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+            }
         }
     });
 }
@@ -179,12 +211,25 @@ if (filterButtons.length > 0) {
 // Navbar background on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
+    const body = document.body;
+    const isDarkMode = body.classList.contains('dark-mode');
+    
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        if (isDarkMode) {
+            navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+            navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.4)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        }
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+        if (isDarkMode) {
+            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+            navbar.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.3)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+        }
     }
 });
 
