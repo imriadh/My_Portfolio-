@@ -53,5 +53,16 @@
         "readTime": "10 min read",
         "slug": "chatgpt-prompts-for-cs-students",
         "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop"
+    },
+    {
+        "id": 6,
+        "title": "How to Crack DevOps Career as a Beginner",
+        "language": "English",
+        "excerpt": "Complete roadmap for starting your DevOps career - essential skills, tools, learning path, and tips to land your first job.",
+        "date": "February 5, 2026",
+        "category": "Career",
+        "readTime": "12 min read",
+        "slug": "devops-career-guide-for-beginners",
+        "image": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=400&fit=crop"
     }
 ]
