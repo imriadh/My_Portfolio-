@@ -53,6 +53,14 @@ body.dark-mode .nav-link:hover {
     color: #818cf8;
 }
 
+body.dark-mode .nav-menu {
+    background: rgba(15, 23, 42, 0.98);
+}
+
+body.dark-mode .nav-toggle span {
+    background: #cbd5e1;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -931,6 +939,7 @@ section {
     font-size: 1rem;
     font-family: inherit;
     background: var(--bg-primary);
+    color: var(--text-primary);
     transition: var(--transition);
 }
 
