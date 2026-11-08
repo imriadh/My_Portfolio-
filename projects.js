@@ -56,17 +56,18 @@ const PROJECTS = [
     name: "HabitFlow",
     meta: "Full-stack product · AI coach — React, Supabase, Groq",
     desc: {
-      ai: "A calm, data-driven habit tracker with a private AI coach powered by Groq's llama-3.3 — the model only ever sees a small anonymized summary of your logs, never the raw data.",
-      data: "A habit tracker that treats behavior as data: streak algorithms that survive missed days, calendar history and statistics computed from ten weeks of real check-in records.",
-      devops: "A three-tier architecture — React frontend, Node.js/Express API and Supabase PostgreSQL — with schema, row-level security policies and environment-based configuration in version control.",
+      ai: "A calm, data-driven habit tracker with a private AI coach — the live demo runs with 10 weeks of sample data and no sign-up, entirely in your browser. React + TypeScript frontend, Node.js/Express API, Supabase PostgreSQL with row-level security, and the Groq coach integration.",
+      data: "A habit tracker that treats behavior as data: streak algorithms that survive missed days, calendar history and statistics computed from ten weeks of check-in records — explore them in the live demo, pre-loaded with sample data.",
+      devops: "A three-tier architecture — React frontend, Node.js/Express API and Supabase PostgreSQL — with schema, row-level security policies and environment-based configuration in version control. The static frontend build is deployed in the live demo.",
     },
     problem: "Most habit apps nag and shame. HabitFlow is designed to be kind, private and honest about missed days.",
     contribution: "Full-stack build: React + TypeScript frontend with hand-written CSS, Express API, Supabase schema with row-level security, and the Groq AI coach integration.",
     stack: ["React", "TypeScript", "Node.js", "Express", "Supabase", "Groq AI"],
-    live: null, // no public deployment yet — source only
+    live: "https://riad.iam.bd/habitflow-demo/", // interactive demo — sample data, no login
     source: "https://github.com/imriadh/Habit-Flow",
-    image: null,
-    imgAlt: "",
+    image: "assets/projects/habitflow.webp",
+    imgAlt: "HabitFlow dashboard — 1 of 5 habits checked in today with a 30% progress ring, streak cards, weekly bar chart and an on-device AI coach insight panel",
+    imgW: 1360, imgH: 907,
   },
   {
     id: "disaster-tweet",
