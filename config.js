@@ -23,7 +23,7 @@
         Preview never overwrites this source configuration.
 ============================================================================ */
 
-const ACTIVE_PROFILE = "ai";
+const ACTIVE_PROFILE = "devops";
 
 /* ----------------------------------------------------------------------------
    Site facts (used across the site — edit rarely)
