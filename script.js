@@ -37,7 +37,7 @@
     // PROFILES/SITE come from config.js (index.html). The blog page loads
     // script.js without them — skip profile work gracefully in that case.
     if (typeof PROFILES === "undefined") return;
-    var p = PROFILES[mode] || PROFILES.ai;
+    var p = PROFILES[mode] || PROFILES.devops;
 
     // Hero -------------------------------------------------------------
     setText("heroKicker", p.kicker);
