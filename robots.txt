@@ -1,0 +1,7 @@
+# robots.txt — https://riad.iam.bd
+# Allow normal crawling of all public site content.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://riad.iam.bd/sitemap.xml

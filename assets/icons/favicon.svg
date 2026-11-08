@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="#171A18" stroke="#343B36" stroke-width="1.5"/>
+  <text x="32" y="45" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="600" fill="#C5F36A">R<tspan font-style="italic" fill="#F0F1E9" font-weight="500">h</tspan><tspan fill="#C5F36A">.</tspan></text>
+</svg>

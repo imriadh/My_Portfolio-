@@ -1,99 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Riad's Blog - Thoughts, tutorials, and insights on programming, productivity, and technology.">
-    <meta name="keywords" content="Riad, Blog, Programming, Technology, Tutorials, Web Development">
-    <meta name="author" content="Riad">
-    <title>Blog | Riad - CSE Student</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💻</text></svg>">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog | Riad Hossain — Programming, AI &amp; Productivity Notes</title>
+  <meta name="description" content="Tutorials, career guides and notes from Riad Hossain — programming, productivity, DevOps and AI, written in English and Bangla.">
+  <meta name="author" content="Riad Hossain">
+  <meta name="theme-color" content="#171A18">
+
+  <link rel="canonical" href="https://riad.iam.bd/blogs.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Blog | Riad Hossain — Programming, AI &amp; Productivity Notes">
+  <meta property="og:description" content="Tutorials, career guides and notes from Riad Hossain — programming, productivity, DevOps and AI, written in English and Bangla.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://riad.iam.bd/blogs.html">
+  <meta property="og:site_name" content="Riad Hossain">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://riad.iam.bd/assets/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Riad Hossain — software developer building AI-powered products.">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog | Riad Hossain — Programming, AI &amp; Productivity Notes">
+  <meta name="twitter:description" content="Tutorials, career guides and notes on programming, productivity, DevOps and AI — in English and Bangla.">
+  <meta name="twitter:image" content="https://riad.iam.bd/assets/images/og-cover.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Riad Hossain's Blog",
+    "url": "https://riad.iam.bd/blogs.html",
+    "description": "Tutorials, career guides and notes on programming, productivity, DevOps and AI — in English and Bangla.",
+    "publisher": { "@id": "https://riad.iam.bd/#person" },
+    "inLanguage": ["en", "bn"]
+  }
+  </script>
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html" style="text-decoration: none; color: inherit;">
-                    <span class="logo-text">Riad<span class="logo-dot">.</span></span>
-                </a>
-            </div>
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html#home" class="nav-link">Home</a>
-                <a href="index.html#about" class="nav-link">About</a>
-                <a href="index.html#skills" class="nav-link">Skills</a>
-                <a href="index.html#projects" class="nav-link">Projects</a>
-                <a href="blogs.html" class="nav-link active">Blog</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
-            </div>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Blog Hero Section -->
-    <section class="blog-hero">
-        <div class="container">
-            <div class="blog-hero-content">
-                <h1 class="blog-hero-title">
-                    <span class="gradient-text">My Blog</span>
-                </h1>
-                <p class="blog-hero-description">Sharing my journey, tutorials, and insights on programming, productivity, and technology</p>
-            </div>
-        </div>
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="index.html" aria-label="Riad Hossain — home">Riad <i>Hossain</i><b>.</b></a>
+      <nav class="nav-desktop" aria-label="Primary">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="index.html#work">Work</a>
+        <a class="nav-link" href="index.html#about">About</a>
+        <a class="nav-link" href="index.html#focus">Focus</a>
+        <a class="nav-link" href="blogs.html" aria-current="page">Blog</a>
+        <a class="nav-link" href="index.html#contact">Contact</a>
+      </nav>
+      <a class="header-cta" href="index.html#contact">Hire me</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+    <a href="index.html#home"><small>01</small> Home</a>
+    <a href="index.html#work"><small>02</small> Work</a>
+    <a href="index.html#about"><small>03</small> About</a>
+    <a href="index.html#focus"><small>04</small> Focus</a>
+    <a href="blogs.html"><small>05</small> Blog</a>
+    <a href="index.html#contact"><small>06</small> Contact</a>
+    <div class="mobile-foot">
+      <a href="https://github.com/imriadh" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/riad-hossain-576316289/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a href="mailto:mdriad.alone@gmail.com">Email ↗</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="page-head section--flush" aria-label="Blog introduction">
+      <div class="container">
+        <p class="hero-eyebrow">Notes &amp; guides</p>
+        <h1 class="page-title">Writing about code, <em>careers</em> &amp; the tools in between.</h1>
+        <p class="page-sub">Tutorials, career roadmaps and lessons from building real software — in English and Bangla. Same articles, same addresses as always.</p>
+      </div>
     </section>
 
-    <!-- Blog Section -->
-    <section class="blog-main">
-        <div class="container">
-            <div class="blog-filters">
-                <button class="filter-btn active" data-category="all">All Posts</button>
-                <button class="filter-btn" data-category="Career">Career</button>
-                <button class="filter-btn" data-category="Tutorial">Tutorial</button>
-                <button class="filter-btn" data-category="Productivity">Productivity</button>
-            </div>
-            <div class="blog-grid" id="blogGrid">
-                <!-- Blog posts will be loaded here dynamically -->
-                 
-            </div>
+    <section class="section" aria-label="Blog posts">
+      <div class="container">
+        <div class="blog-filters" role="group" aria-label="Filter posts by category">
+          <button class="filter-btn is-active" data-category="all">All posts</button>
+          <button class="filter-btn" data-category="Tech &amp; Career">Tech &amp; Career</button>
+          <button class="filter-btn" data-category="Tutorial">Tutorial</button>
+          <button class="filter-btn" data-category="Productivity">Productivity</button>
+          <button class="filter-btn" data-category="শিক্ষা">শিক্ষা</button>
         </div>
+        <div class="blog-grid" id="blogGrid">
+          <!-- Posts are loaded from blogs/blogs.json by script.js -->
+          <noscript>
+            <p class="blog-empty">Enable JavaScript to see the article list, or browse the sitemap at <a href="sitemap.xml">/sitemap.xml</a>.</p>
+          </noscript>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-               <p>&copy; 2026 Riad Hossain. All rights reserved.</p>
-               
-            </div>
-        </div>
-    </footer>
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> <b>Riad Hossain</b> · Dhaka, Bangladesh</span>
+      <span><a href="https://github.com/imriadh" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/riad-hossain-576316289/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="index.html">Portfolio</a></span>
+      <span>riad.iam.bd — HTML · CSS · vanilla JS</span>
+    </div>
+  </footer>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
