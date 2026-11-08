@@ -30,7 +30,7 @@
     if (typeof ACTIVE_PROFILE !== "undefined" && VALID_MODES.indexOf(ACTIVE_PROFILE) !== -1) {
       return ACTIVE_PROFILE;
     }
-    return "ai"; // fail-safe default
+    return "devops"; // fail-safe default
   }
 
   function applyProfile(mode) {
