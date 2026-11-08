@@ -30,14 +30,14 @@
     if (typeof ACTIVE_PROFILE !== "undefined" && VALID_MODES.indexOf(ACTIVE_PROFILE) !== -1) {
       return ACTIVE_PROFILE;
     }
-    return "devops"; // fail-safe default
+    return "ai"; // fail-safe default
   }
 
   function applyProfile(mode) {
     // PROFILES/SITE come from config.js (index.html). The blog page loads
     // script.js without them — skip profile work gracefully in that case.
     if (typeof PROFILES === "undefined") return;
-    var p = PROFILES[mode] || PROFILES.devops;
+    var p = PROFILES[mode] || PROFILES.ai;
 
     // Hero -------------------------------------------------------------
     setText("heroKicker", p.kicker);
